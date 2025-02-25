@@ -1,136 +1,268 @@
 <script>
-    import { fly } from 'svelte/transition';
-  
-    const projects = [
-      {
-        title: 'Projet 1',
-        description: 'Description du projet...',
-        technologies: ['Svelte', 'TailwindCSS'],
-        image: '/images/projet1.jpg',
-        demo: 'https://...',
-        github: 'https://...'
-      }
-      // Ajoutez d'autres projets...
-    ];
-  </script>
-  
-  <div class="projects-container" in:fly="{{ y: 50, duration: 500 }}">
-    <h1>Mes Projets</h1>
-   
-    <div class="projects-grid">
-      {#each projects as project}
-        <article class="project-card">
-          <div class="project-image">
-            <img src={project.image} alt={project.title} loading="lazy">
-          </div>
-         
-          <div class="project-content">
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-           
-            <div class="technologies">
-              {#each project.technologies as tech}
-                <span class="tech-badge">{tech}</span>
-              {/each}
-            </div>
-           
-            <div class="project-links">
-              <a href={project.demo} class="btn primary" target="_blank" rel="noopener">
-                Voir la démo
-              </a>
-              <a href={project.github} class="btn secondary" target="_blank" rel="noopener">
-                Code source
-              </a>
-            </div>
-          </div>
-        </article>
-      {/each}
+  const projets = [
+    {
+      image: "/images/reservia.png",
+      titre: "Maquette fonctionnelle",
+      description: "Site web responsive développé en HTML et CSS. Intégration d'une maquette avec animations CSS.",
+      lien: "https://valentindlc.github.io/Booki/",
+      vague: 1
+    },
+    {
+      image: "/images/bluel.png",
+      titre: "Page Web Dynamique",
+      description: "Développement d'une interface interactive pour une architecte d'intérieur avec JavaScript et API.",
+      lien: "https://projet-3-frontend-g0zbv0np9-dardennes-projects.vercel.app",
+      vague: 1
+    },
+    {
+      image: "/images/Nina-carducci.png",
+      titre: "SEO & Accessibilité",
+      description: "Amélioration des performances et du référencement d'un site de photographe via Lighthouse et Wave.",
+      lien: "https://valentindlc.github.io/P4-debuggez-et-optimisez-un-site/",
+      vague: 1
+    },
+    {
+      image: "/images/kasa.png",
+      titre: "App. location immobilière",
+      description: "Développement d'une app web avec React et React Router pour une navigation fluide et optimisée.",
+      lien: "https://p5-sandy-pi.vercel.app",
+      vague: 1
+    },
+    {
+      image: "/images/grimoire.png",
+      titre: "Back-end site de notation",
+      description: "API sécurisée avec Node.js, Express et MongoDB pour gérer les avis et notations de livres.",
+      lien: "https://github.com/ValentinDLC/P6_Grimoire",
+      vague: 1
+    },
+    {
+      image: "/images/landing-page.png",
+      titre: "Landing page",
+      description: "Landing page immersive pour BMW avec effets de parallaxe, animations fluides et design moderne.",
+      lien: "https://valentindlc.github.io/Landing-PageBMW/",
+      vague: 1
+    },
+    {
+      image: "/images/light-out.png",
+      titre: "Jeu Light-out",
+      description: "Jeu de réflexion interactif en JavaScript, mêlant logique, stratégie et défis évolutifs pour une expérience captivante.",
+      lien: "https://valentindlc.github.io/Light_out/",
+      vague: 1
+    },
+    {
+      image: "/images/animation-veille.png",
+      titre: "Animation de veille",
+      description: "Animation de chargement originale avec effets fluides et transitions CSS avancées pour une expérience immersive.",
+      lien: "https://valentindlc.github.io/Laoder/",
+      vague: 2
+    },
+    {
+      image: "/images/animation-curseur.png",
+      titre: "Animation curseur",
+      description: "Effet de curseur personnalisé avec animations dynamiques et interactions fluides pour une navigation plus immersive.",
+      lien: "https://valentindlc.github.io/cursor-animat/",
+      vague: 2
+    },
+    {
+      image: "/images/portfolio.png",
+      titre: "Création portfolio",
+      description: "Portfolio interactif mettant en avant mes projets et compétences en développement web.",
+      lien: "https://valentindlc.github.io/PortFolio2.0",
+      vague: 2
+    }
+  ];
+</script>
+
+
+<h2 class="titre-port open">Création de projets</h2>
+<div class="cont-portfolio">
+  {#each projets as projet}
+    <div class="item vague{projet.vague}">
+      <div class="cont-img-port">
+        <img src={projet.image} alt="img portfolio" />
+      </div>
+      <div class="overlay">
+        <p class="description">{projet.description}</p>
+        <a href={projet.lien} target="_blank" class="btn-projects">Découvrez le projet</a>
+        <h3>{projet.titre}</h3>
+      </div>
     </div>
-  </div>
-  
-  <style>
-    .projects-container {
-      padding: clamp(1rem, 3vw, 2rem);
+  {/each}
+</div>
+
+
+<style>
+  .titre-port {
+    text-align: center;
+    padding: 0 5em 0 0;
+  }
+
+  @media (min-width: 768px) {
+    .titre-port {
+      font-size: 3rem;
+      padding: 0;
     }
-  
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .open {
+    color: rgba(11, 1, 2, 0.9);
+  }
+
+  .cont-portfolio   {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-  
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: clamp(2rem, 5vw, 4rem);
+    50% {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
     }
-  
-    .project-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+    100% {
+      transform: translateY(0);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-  
-    .project-card:hover {
-      transform: translateY(-5px);
+  }
+
+  .item {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 100%;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    animation: floating 3s infinite ease-in-out;
+    transition: transform 0.3s ease-out;
+
+  }
+
+  .item:hover {
+    transform: translateY(-5px);
+  }
+
+  .cont-img-port {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cont-img-port img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    padding: 2rem;
+  }
+
+  .item:hover .overlay {
+    opacity: 1;
+  }
+
+  .description {
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 80%;
+  }
+
+  .item h3 {
+    text-align: center;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 2em;
+    color: white;
+    z-index: 3;
+  }
+
+  .btn-projects {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+  .btn-projets:hover {
+    background-color: #fff;
+    color: #333;
+  }
+
+  @media (min-width: 480px) {
+    .item {
+      width: 320px;
+      height: 320px;
     }
-  
-    .project-image img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+
+
+    .cont-img-port,
+    .overlay {
+      border-radius: 20px;
     }
-  
-    .project-content {
-      padding: clamp(1rem, 3vw, 2rem);
+
+    .titre-port {
+      padding: 0;
+      font-size: 3rem;
     }
-  
-    .technologies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0;
+
+    .description {
+      font-size: 1rem;
+      padding: 0 1rem;
     }
-  
-    .tech-badge {
-      padding: 0.25rem 0.75rem;
-      background: #f0f0f0;
-      border-radius: 999px;
-      font-size: 0.875rem;
+
+    .btn-projets {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
     }
-  
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
+
+    .item h3 {
+      font-size: 1.2rem;
     }
-  
-    .btn {
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.3s ease;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    .item {
+      width: 400px;
+      height: 400px;
     }
-  
-    .primary {
-      background: #007bff;
-      color: white;
+
+    .cont-img-port,
+    .overlay {
+      border-radius: 20px;
     }
-  
-    .secondary {
-      border: 1px solid #007bff;
-      color: #007bff;
-    }
-  
-    @media (max-width: 640px) {
-      .project-links {
-        flex-direction: column;
-      }
-  
-      .btn {
-        text-align: center;
-      }
-    }
-  </style>
-  
+  }
+</style>

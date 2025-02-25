@@ -8,7 +8,6 @@
     };
   
     function handleSubmit() {
-      // Gérer l'envoi du formulaire
       console.log('Formulaire soumis:', formData);
     }
   </script>
