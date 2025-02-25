@@ -3,10 +3,10 @@
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import { page } from '$app/stores';
-	let isMenuOpen = false; // État pour gérer l'affichage du menu mobile
+	let isMenuOpen = false;
   
 	const toggleMenu = () => {
-	  isMenuOpen = !isMenuOpen; // Inverser l'état du menu
+	  isMenuOpen = !isMenuOpen;
 	};
   </script>
   
