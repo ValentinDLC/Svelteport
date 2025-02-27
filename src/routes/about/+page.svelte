@@ -59,12 +59,14 @@
 		backend: [
 			{ name: 'Node.js', icon: 'logos:nodejs-icon' },
 			{ name: 'Express', icon: 'logos:express' },
-			{ name: 'MongoDB', icon: 'logos:mongodb-icon' }
+			{ name: 'MongoDB', icon: 'logos:mongodb-icon' },
 		],
 		tools: [
 			{ name: 'Git', icon: 'logos:git' },
-			{ name: 'VS Code', icon: 'logos:visual-studio-code' },
-			{ name: 'Figma', icon: 'logos:figma' }
+			{ name: 'Webstorm', icon: 'logos:webstorm' },
+			{ name: 'Postman', icon: 'logos:postman-icon' },
+			{ name: 'Vercel', icon: 'logos:vercel-icon' },
+			{ name: 'Notion', icon: 'logos:notion-icon' }
 		]
 	};
 
@@ -179,9 +181,10 @@
 			<div class="skills-list">
 				{#each skills.backend as skill}
 					<div class="skill-card">
-						<span class="skill-icon {mountedSections.backend ? 'animate' : ''}">
-							<Icon icon={skill.icon} />
-						</span>
+                <span class="skill-icon {mountedSections.backend ? 'animate' : ''}"
+					  style="font-size: {skill.name === 'Express' ? '1.5rem' : '3rem'};">
+                    <Icon icon={skill.icon} />
+                </span>
 					</div>
 				{/each}
 			</div>
@@ -240,7 +243,6 @@
 		text-align: center;
 	}
 
-	/* Styles spécifiques pour les soft-skills */
 	.soft-skills-list {
 		display: flex;
 		gap: 1.5rem;
@@ -261,7 +263,7 @@
 		position: relative;
 		width: 8em;
 		height: 3em;
-		cursor: pointer; /* Ajout du curseur pointer pour indiquer l'interaction */
+		cursor: pointer;
 	}
 
 	.soft-skill-card:hover {
@@ -277,7 +279,7 @@
 		text-align: center;
 		color: var(--skill-color);
 		transition: color 0.3s;
-		pointer-events: none; /* Évite les problèmes de bulle d'événements */
+		pointer-events: none;
 	}
 
 	.soft-skill-card:hover .soft-skill-name {
@@ -312,10 +314,9 @@
 	.soft-skill-card:hover .skill-description {
 		opacity: 1;
 		visibility: visible;
-		transition-delay: 0.1s; /* Léger délai pour éviter les disparitions accidentelles */
+		transition-delay: 0.1s;
 	}
 
-	/* Ajouter une flèche pour relier la description à la compétence */
 	.skill-description::before {
 		content: '';
 		position: absolute;
@@ -328,7 +329,6 @@
 		border-bottom: 10px solid var(--skill-color);
 	}
 
-	/* Styles pour les boutons de certificats */
 	.buttons-container {
 		display: flex;
 		justify-content: center;
@@ -339,7 +339,7 @@
 
 	.certificate-link {
 		text-decoration: none;
-		cursor: pointer; /* Ajout du curseur pointer */
+		cursor: pointer;
 	}
 
 	.certificate-button {
@@ -349,7 +349,7 @@
 		transition: all 0.3s ease;
 		position: relative;
 		width: 120px;
-		height: 100px; /* Ajout d'une hauteur fixe pour réserver l'espace du texte */
+		height: 100px;
 	}
 
 	.certificate-image {
@@ -370,7 +370,7 @@
 		color: #333;
 		font-weight: 600;
 		width: 100%;
-		pointer-events: none; /* Évite les problèmes de bulle d'événements */
+		pointer-events: none;
 	}
 
 	.certificate-button:hover .certificate-image {
@@ -383,7 +383,6 @@
 		transform: translateY(0);
 	}
 
-	/* Styles pour la section de compétences techniques */
 	.skills-container {
 		padding: clamp(1rem, 3vw, 2rem);
 		max-width: 1200px;
@@ -433,6 +432,7 @@
 		animation: popIn 0.5s ease forwards;
 	}
 
+
 	@keyframes popIn {
 		0% {
 			transform: scale(0);
@@ -448,7 +448,6 @@
 		}
 	}
 
-	/* Fix pour garantir que les descriptions restent visibles sur les appareils tactiles */
 	@media (hover: none) {
 		.soft-skill-card:active .skill-description {
 			opacity: 1;
@@ -473,7 +472,6 @@
 
 		.skill-description {
 			width: 250px;
-			/* Ajustement pour les petits écrans */
 			left: 50%;
 			transform: translateX(-50%);
 		}
