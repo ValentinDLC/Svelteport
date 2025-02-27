@@ -1,10 +1,12 @@
 <script>
+  import Icon from '@iconify/svelte';
   const projets = [
     {
       image: "/images/reservia.png",
       titre: "Maquette fonctionnelle",
       description: "Site web responsive développé en HTML et CSS. Intégration d'une maquette avec animations CSS.",
       lien: "https://valentindlc.github.io/Booki/",
+      lien1: "https://github.com/ValentinDLC/Booki",
       vague: 1
     },
     {
@@ -12,6 +14,7 @@
       titre: "Page Web Dynamique",
       description: "Développement d'une interface interactive pour une architecte d'intérieur avec JavaScript et API.",
       lien: "https://projet-3-frontend-g0zbv0np9-dardennes-projects.vercel.app",
+      lien1: "https://github.com/ValentinDLC/Projet-3---cr-ez-une-page-web-dynamique-avec-javascript",
       vague: 1
     },
     {
@@ -19,6 +22,7 @@
       titre: "SEO & Accessibilité",
       description: "Amélioration des performances et du référencement d'un site de photographe via Lighthouse et Wave.",
       lien: "https://valentindlc.github.io/P4-debuggez-et-optimisez-un-site/",
+      lien1: "https://github.com/ValentinDLC/P4-debuggez-et-optimisez-un-site",
       vague: 1
     },
     {
@@ -26,6 +30,7 @@
       titre: "App. location immobilière",
       description: "Développement d'une app web avec React et React Router pour une navigation fluide et optimisée.",
       lien: "https://p5-sandy-pi.vercel.app",
+      lien1: "https://github.com/ValentinDLC/P5",
       vague: 1
     },
     {
@@ -33,6 +38,7 @@
       titre: "Back-end site de notation",
       description: "API sécurisée avec Node.js, Express et MongoDB pour gérer les avis et notations de livres.",
       lien: "https://github.com/ValentinDLC/P6_Grimoire",
+      lien1: "https://github.com/ValentinDLC/P6_Grimoire",
       vague: 1
     },
     {
@@ -40,6 +46,7 @@
       titre: "Landing page",
       description: "Landing page immersive pour BMW avec effets de parallaxe, animations fluides et design moderne.",
       lien: "https://valentindlc.github.io/Landing-PageBMW/",
+      lien1: "https://github.com/ValentinDLC/Landing-PageBMW",
       vague: 1
     },
     {
@@ -47,6 +54,7 @@
       titre: "Jeu Light-out",
       description: "Jeu de réflexion interactif en JavaScript, mêlant logique, stratégie et défis évolutifs pour une expérience captivante.",
       lien: "https://valentindlc.github.io/Light_out/",
+      lien1: "https://github.com/ValentinDLC/Light_out",
       vague: 1
     },
     {
@@ -54,6 +62,7 @@
       titre: "Animation de veille",
       description: "Animation de chargement originale avec effets fluides et transitions CSS avancées pour une expérience immersive.",
       lien: "https://valentindlc.github.io/Laoder/",
+      lien1: "https://github.com/ValentinDLC/Laoder",
       vague: 2
     },
     {
@@ -61,6 +70,7 @@
       titre: "Animation curseur",
       description: "Effet de curseur personnalisé avec animations dynamiques et interactions fluides pour une navigation plus immersive.",
       lien: "https://valentindlc.github.io/cursor-animat/",
+      lien1: "https://github.com/ValentinDLC/cursor-animat",
       vague: 2
     },
     {
@@ -68,11 +78,11 @@
       titre: "Création portfolio",
       description: "Portfolio interactif mettant en avant mes projets et compétences en développement web.",
       lien: "https://valentindlc.github.io/PortFolio2.0",
+      lien1: "https://valentindlc.github.io/PortFolio2.0",
       vague: 2
     }
   ];
 </script>
-
 
 <h2 class="titre-port open">Création de projets</h2>
 <div class="cont-portfolio">
@@ -83,13 +93,19 @@
       </div>
       <div class="overlay">
         <p class="description">{projet.description}</p>
-        <a href={projet.lien} target="_blank" class="btn-projects">Découvrez le projet</a>
+        <div class="link-container">
+          <a href={projet.lien} target="_blank" class="btn-projects">
+            <Icon icon="mdi:qrcode" width="2rem" height="2rem" />
+          </a>
+          <a href={projet.lien1} target="_blank" class="btn-projects">
+            <Icon icon="mdi:github" width="2rem" height="2rem" />
+          </a>
+        </div>
         <h3>{projet.titre}</h3>
       </div>
     </div>
   {/each}
 </div>
-
 
 <style>
   .titre-port {
@@ -108,7 +124,7 @@
     color: rgba(11, 1, 2, 0.9);
   }
 
-  .cont-portfolio   {
+  .cont-portfolio {
     width: 100%;
     height: auto;
     display: flex;
@@ -144,7 +160,6 @@
     position: relative;
     animation: floating 3s infinite ease-in-out;
     transition: transform 0.3s ease-out;
-
   }
 
   .item:hover {
@@ -187,28 +202,31 @@
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 80%;
+  }
+
+  .link-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .item h3 {
     text-align: center;
     font-size: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 2em;
+    position: relative;
     color: white;
     z-index: 3;
   }
 
   .btn-projects {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 1.2rem;
     color: #fff;
     text-decoration: none;
     border: 2px solid #fff;
-    border-radius: 25px;
+    border-radius: 50%;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -217,7 +235,7 @@
     z-index: 2;
   }
 
-  .btn-projets:hover {
+  .btn-projects:hover {
     background-color: #fff;
     color: #333;
   }
@@ -227,7 +245,6 @@
       width: 320px;
       height: 320px;
     }
-
 
     .cont-img-port,
     .overlay {
@@ -244,8 +261,7 @@
       padding: 0 1rem;
     }
 
-    .btn-projets {
-      padding: 0.6rem 1.2rem;
+    .btn-projects {
       font-size: 0.9rem;
     }
 
