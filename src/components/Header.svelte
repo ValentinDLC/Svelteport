@@ -1,14 +1,16 @@
 <script>
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
+  import ThemeToggle from './ThemeToggle.svelte';
+  import { theme } from '../stores/theme';
   let isOpen = false;
 
   const routes = [
     { path: '/', label: 'Accueil' },
     { path: '/about', label: 'À propos' },
     { path: '/projects', label: 'Projets' },
-    { path: '/skills', label: 'Compétences' },
-    { path: '/contact', label: 'Contact' }
+    //{ path: '/skills', label: 'Compétences' },
+    //{ path: '/contact', label: 'Contact' }
   ];
 
   function toggleMenu() {
@@ -20,9 +22,11 @@
     await goto(path);
     isOpen = false;
   }
+
 </script>
 
-<header class="header {isOpen ? 'header-expanded' : ''}" style="{isOpen ? 'background-color: rgb(255,255,255)' : ''}">
+<div class="header {isOpen ? 'header-expanded' : ''} ">
+  <img src="/images/Logo_P.PNG" alt="logo" class="logo" />
   <button
           on:click={toggleMenu}
           class="menu-button {isOpen ? 'menu-open' : 'menu-closed'}">
@@ -75,8 +79,8 @@
       {/if}
     </span>
   </button>
-
-</header>
+  <!--<ThemeToggle /> -->
+</div>
 
 <style>
   .header {
@@ -84,11 +88,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10%;
+    height: 8%;
     display: flex;
     align-items: center;
     z-index: 1000;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
   }
+
+  .logo {
+    width: 3em;
+    margin-left: 2rem;
+  }
+
 
   .menu-button {
     display: flex;
@@ -166,6 +178,11 @@
       align-items: center;
       padding: 1rem;
       gap: 0.5rem;
+      justify-content: flex-start;
+    }
+
+    .menu-list a {
+      font-size: 1em;
     }
 
     nav {
