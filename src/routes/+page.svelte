@@ -10,7 +10,7 @@
 	const phrases = [
 		"Bienvenue sur mon portfolio",
 		"Je suis développeur web passionné",
-		"Spécialisé en JavaScript et Svelte",
+		"J'aime apprendre, concevoir et innover",
 		"Créons quelque chose d'extraordinaire ensemble"
 	];
 
@@ -155,7 +155,7 @@
 	}
 
 	.primary {
-		background: #007bff;
+		background: var(--primary-color);
 		color: white;
 		box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
 	}

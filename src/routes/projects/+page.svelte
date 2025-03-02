@@ -82,9 +82,28 @@
       vague: 2
     }
   ];
+
+    let iconSize = '2rem'; // Valeur par défaut
+
+    // Fonction pour mettre à jour la taille de l'icône
+    function updateIconSize() {
+    if (window.innerWidth < 481) {
+    iconSize = '1.5rem'; // Taille pour petits écrans
+  } else if (window.innerWidth >= 481 && window.innerWidth <= 768) {
+    iconSize = '2rem';
+  } else {
+    iconSize = '2.5rem';
+  }
+  }
+
+    updateIconSize();
+
+    window.addEventListener('resize', updateIconSize);
 </script>
 
-<h2 class="titre-port open">Création de projets</h2>
+
+
+<h2 class="titre-port">Création de projets</h2>
 <div class="cont-portfolio">
   {#each projets as projet}
     <div class="item vague{projet.vague}">
@@ -92,16 +111,16 @@
         <img src={projet.image} alt="img portfolio" />
       </div>
       <div class="overlay">
+        <h3>{projet.titre}</h3>
         <p class="description">{projet.description}</p>
         <div class="link-container">
           <a href={projet.lien} target="_blank" class="btn-projects">
-            <Icon icon="mdi:qrcode" width="2rem" height="2rem" />
+            <Icon icon="mdi:qrcode" width={iconSize} height={iconSize} />
           </a>
           <a href={projet.lien1} target="_blank" class="btn-projects">
-            <Icon icon="mdi:github" width="2rem" height="2rem" />
+            <Icon icon="mdi:github" width={iconSize} height={iconSize} />
           </a>
         </div>
-        <h3>{projet.titre}</h3>
       </div>
     </div>
   {/each}
@@ -125,13 +144,11 @@
   }
 
   .cont-portfolio {
-    width: 100%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem;
-    padding: 2rem;
+    gap: 2rem;
   }
 
   @keyframes floating {
@@ -200,10 +217,7 @@
   .description {
     color: #fff;
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    max-width: 80%;
+
   }
 
   .link-container {
@@ -240,45 +254,65 @@
     color: #333;
   }
 
-  @media (min-width: 480px) {
+  @media (max-width: 480px) {
     .item {
-      width: 320px;
-      height: 320px;
+      width: 8rem;
+      height: 8rem;
     }
+
 
     .cont-img-port,
     .overlay {
       border-radius: 20px;
     }
 
+    .overlay {
+      width: auto;
+      height: auto;
+    }
+
     .titre-port {
-      padding: 0;
-      font-size: 3rem;
+      padding: 1em 0 0 0;
+      font-size: 2rem;
     }
 
     .description {
-      font-size: 1rem;
-      padding: 0 1rem;
+      font-size: 0.3rem;
     }
 
     .btn-projects {
       font-size: 0.9rem;
+      padding: 0.1rem 0.2rem;
     }
 
     .item h3 {
-      font-size: 1.2rem;
+      font-size: .5rem;
     }
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
     .item {
-      width: 400px;
-      height: 400px;
+      width: 15rem;
+      height: 15rem;
+    }
+
+
+    .titre-port {
+      padding: 2em 0 0 0;
+      font-size: 2rem;
     }
 
     .cont-img-port,
     .overlay {
       border-radius: 20px;
+    }
+
+    .btn-projects {
+      padding: 0.5rem 0.7rem;
+    }
+
+    .description {
+      font-size: 0.6rem;
     }
   }
 </style>

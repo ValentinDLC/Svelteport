@@ -1,39 +1,34 @@
 <!-- Footer.svelte -->
-<footer>
+
     <div class="footer-content">
       <div class="footer-section">
         <h3>Contact</h3>
-        <p>email@example.com</p>
+        <p>valentin.dardenne9@gmail.com</p>
       </div>
       <div class="footer-section">
         <h3>Réseaux</h3>
         <div class="social-links">
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-          <a href="#" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://www.linkedin.com/in/valentin-dardenne-70800a76/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ValentinDLC" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 Votre Nom - Tous droits réservés</p>
+      <p>&copy; 2025 Dardenne - Tous droits réservés</p>
     </div>
-  </footer>
+
   
   <style>
-    footer {
-      background: #f8f9fa;
-      padding: clamp(2rem, 5vw, 4rem) 0 1rem;
-    }
+
   
     .footer-content {
       max-width: min(90%, 1200px);
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
       gap: clamp(2rem, 5vw, 4rem);
       padding: 0 clamp(1rem, 3vw, 2rem);
     }
-  
+
     .footer-section h3 {
       font-size: clamp(1.1rem, 2.5vw, 1.25rem);
       margin-bottom: 1rem;
