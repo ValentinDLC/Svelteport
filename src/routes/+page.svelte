@@ -55,6 +55,9 @@
 	onDestroy(() => {
 		if (timeoutId) clearTimeout(timeoutId);
 	});
+
+	let mon_nom = "Votre Nom";
+	let ma_demande = "Votre Demande";
 </script>
 
 <div class="home-container" in:fly="{{ y: 50, duration: 500 }}">
@@ -70,7 +73,13 @@
 
 		<div class="cta-buttons">
 			<a href="/projects" class="btn primary">Voir mes projets</a>
-			<a href="/contact" class="btn secondary">Me contacter</a>
+			<a
+					href={`mailto:valentin.dardenne9@gmail.com?subject=Demande de contact&body=Bonjour,%0D%0A%0D%0AMon nom est : ${mon_nom}%0D%0A%0D%0AMa demande : ${ma_demande}`}
+					target="_blank"
+					class="btn secondary"
+			>
+				Me contacter
+			</a>
 		</div>
 	</div>
 </div>
