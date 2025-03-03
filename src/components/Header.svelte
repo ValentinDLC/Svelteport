@@ -172,6 +172,10 @@
   }
 
   @media (max-width: 768px) {
+
+    .logo {
+      width: 2em;
+    }
     .menu-open {
       width: calc(100% - 2rem);
     }
