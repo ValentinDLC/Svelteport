@@ -148,7 +148,7 @@
 						<span class="certificate-text">Certificat Opquast</span>
 					</div>
 				</a>
-				<a href="/Alternance_contrat_d'apprentissage_Développeur-Web_et_Mobile-Valentin_DARDENNE.pdf" target="_blank" class="certificate-link">
+				<a href="/Documents/Alternance_contrat_d_apprentissage_Developpeur-Web_et_Mobile.pdf" target="_blank" class="certificate-link">
 					<div class="certificate-button">
 						<img src="/images/icon-cv.png" alt="Mon CV" class="certificate-image" />
 						<span class="certificate-text">Mon CV</span>
