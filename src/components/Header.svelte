@@ -183,7 +183,8 @@
     }
 
     .menu-list a {
-      font-size: 0.8em;
+      font-size: 90%;
+      padding: 0;
     }
 
     nav {
