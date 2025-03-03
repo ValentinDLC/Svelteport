@@ -94,7 +94,7 @@
     display: flex;
     align-items: center;
     z-index: 1000;
-    background-color: var(--card-bg);
+    background-color: #e9e9e9;
     transition: background-color 0.3s ease;
   }
 
