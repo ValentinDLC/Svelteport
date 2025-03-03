@@ -1,8 +1,8 @@
 <script>
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
-  import ThemeToggle from './ThemeToggle.svelte';
-  import { theme } from '../stores/theme';
+  // import ThemeToggle from './ThemeToggle.svelte';
+  // import { theme } from '../stores/theme';
   let isOpen = false;
 
   const routes = [
