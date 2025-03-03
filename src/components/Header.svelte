@@ -133,7 +133,7 @@
   .menu-open {
     width: 90%;
     max-width: 100%;
-    margin-left: 3%;
+    margin-inline: 1%;
   }
 
   .menu-list {
@@ -180,11 +180,10 @@
       align-items: center;
       padding: 1rem;
       gap: 0.5rem;
-      justify-content: flex-start;
     }
 
     .menu-list a {
-      font-size: 1em;
+      font-size: 0.8em;
     }
 
     nav {
