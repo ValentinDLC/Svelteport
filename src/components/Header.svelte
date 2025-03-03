@@ -6,7 +6,7 @@
   let isOpen = false;
 
   const routes = [
-    { path: '', label: 'Accueil' },
+    { path: '/accueil', label: 'Accueil' },
     { path: '/about', label: 'À propos' },
     { path: '/projects', label: 'Projets' },
     //{ path: '/skills', label: 'Compétences' },
