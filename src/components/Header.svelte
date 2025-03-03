@@ -25,8 +25,10 @@
 
 </script>
 
-<div class="header {isOpen ? 'header-expanded' : ''} ">
-  <img src="/images/Logo_P.PNG" alt="logo" class="logo" />
+<div  role="button" class="header {isOpen ? 'header-expanded' : ''} ">
+  <a href="/">
+    <img src="/images/Logo_P.PNG" alt="logo" class="logo" />
+  </a>
   <button
           on:click={toggleMenu}
           class="menu-button {isOpen ? 'menu-open' : 'menu-closed'}">
@@ -97,7 +99,7 @@
   }
 
   .logo {
-    width: 3em;
+    width: 4em;
     margin-left: 2rem;
   }
 

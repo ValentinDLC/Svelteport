@@ -13,7 +13,7 @@
       image: "/images/bluel.png",
       titre: "Page Web Dynamique",
       description: "Développement d'une interface interactive pour une architecte d'intérieur avec JavaScript et API.",
-      lien: "https://projet-3-frontend-g0zbv0np9-dardennes-projects.vercel.app",
+      lien: "https://projet-3-frontend.vercel.app/",
       lien1: "https://github.com/ValentinDLC/Projet-3---cr-ez-une-page-web-dynamique-avec-javascript",
       vague: 1
     },
