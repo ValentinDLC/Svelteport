@@ -207,7 +207,7 @@
 
 <style>
 	.about-container {
-		padding: clamp(1rem, 3vw, 2rem);
+		padding: clamp(2rem, 3vw, 2rem);
 	}
 
 	.page-title {
