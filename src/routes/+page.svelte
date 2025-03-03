@@ -155,7 +155,7 @@
 	}
 
 	.primary {
-		background: var(--primary-color);
+		background: #3E4C6D;
 		color: white;
 		box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
 	}
