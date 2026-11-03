@@ -1,38 +1,19 @@
-# sv
+# Darvora — portfolio de Valentin Dardenne
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Portfolio professionnel consacré aux tests automatisés, à la qualité logicielle et aux projets Full-Stack. Le site est construit avec SvelteKit et présente les compétences, les expériences, une sélection de projets détaillés ainsi que le catalogue des dépôts GitHub.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Développement local
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Vérification et production
 
 ```bash
+npm run check
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Le CV PDF public est servi depuis `static/Documents/CV_Darvora_Valentin_Dardenne.pdf`.
