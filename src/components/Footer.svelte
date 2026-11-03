@@ -1,59 +1,20 @@
-<!-- Footer.svelte -->
+<script>
+	import { profile } from '$lib/data/portfolio.js';
+</script>
 
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p>valentin.dardenne9@gmail.com</p>
-      </div>
-      <div class="footer-section">
-        <h3>Réseaux</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/valentin-dardenne-70800a76/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/ValentinDLC" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Dardenne - Tous droits réservés</p>
-    </div>
+<footer class="site-footer">
+	<a class="footer-brand" href="/#accueil">Darvora<span>.</span></a>
+	<p>Valentin Dardenne · Développeur de tests automatisés</p>
+	<a href={`mailto:${profile.email}`}>{profile.email}</a>
+	<small>© {new Date().getFullYear()} Darvora · Tous droits réservés</small>
+</footer>
 
-  
-  <style>
-
-  
-    .footer-content {
-      max-width: min(90%, 1200px);
-      margin: 0 auto;
-      display: flex;
-      gap: clamp(2rem, 5vw, 4rem);
-      padding: 0 clamp(1rem, 3vw, 2rem);
-    }
-
-    .footer-section h3 {
-      font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-      margin-bottom: 1rem;
-    }
-  
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-  
-    .social-links a {
-      color: #666;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-  
-    .social-links a:hover {
-      color: #007bff;
-    }
-  
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+<style>
+	.site-footer { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.5rem 2rem; padding: 1.7rem clamp(1.25rem, 5vw, 5rem); border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8rem; }
+	.site-footer p { margin: 0; }
+	.site-footer > a:not(.footer-brand) { color: var(--muted); }
+	.footer-brand { color: var(--text); font-size: 1.1rem; font-weight: 800; text-transform: uppercase; }
+	.footer-brand span { color: var(--gold); }
+	.site-footer small { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); }
+	@media (max-width: 760px) { .site-footer { grid-template-columns: 1fr; } .site-footer small { grid-column: auto; } }
+</style>
